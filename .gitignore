@@ -1,0 +1,9 @@
+*
+!/.gitignore
+!/README.md
+!/index.html
+!/style.css
+!/csv.js
+!/app.js
+!/csv.test.cjs
+!/preview.png

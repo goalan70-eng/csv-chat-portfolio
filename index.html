@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; object-src 'none'; form-action 'none'; base-uri 'none'">
+  <title>행찾기 · CSV 대화 노트</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="csv.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main>
+    <header><p class="brand">행찾기 <span>/ CSV 대화 노트</span></p>
+      <h1>질문에서 원본 행까지</h1>
+      <p>값을 찾고, 답의 근거가 된 CSV 행을 바로 확인하세요.</p>
+    </header>
+    <section aria-labelledby="source"><h2 id="source">사용할 자료</h2>
+      <p id="dataset"></p>
+      <div class="actions"><label class="file">CSV 열기 <input id="file" type="file" accept=".csv,text/csv"></label>
+      <button id="example" type="button">예시로 돌아가기</button></div>
+      <p class="hint">쉼표 구분 CSV · 최대 1 MiB · 선택한 파일은 이 브라우저에서만 처리</p>
+    </section>
+    <section aria-labelledby="ask"><h2 id="ask">자료에 질문하기</h2>
+      <div class="actions" id="suggestions"></div>
+      <form><label for="question">질문</label><div class="input-row"><input id="question" maxlength="180" autocomplete="off" required placeholder="예: 그림책 찾아줘">
+      <button type="submit" class="primary">질문하기</button></div></form>
+      <div id="history" aria-live="polite"></div>
+    </section>
+  </main>
+</body>
+</html>
